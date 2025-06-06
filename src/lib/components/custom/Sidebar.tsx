@@ -11,9 +11,6 @@ export default function Sidebar() {
                 <Button variant={isActive("/") ? "outline" : "ghost"} className="w-full" asChild>
                     <Link to="/">Home</Link>
                 </Button>
-                <Button variant={isActive("/shop") ? "outline" : "ghost"} className="w-full" asChild>
-                    <Link to="/shop">Shop</Link>
-                </Button>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ bun install && bun build && bun start
 ## Project Structure
 
 ```
-├── src/           # Client code (alias: @/)
+├── src/           # Client code (alias: @src/)
 ├── src/main.tsx   # Client entry point
 ├── api/           # API routes (alias: @api/) 
 ├── api/hono.ts    # API entry point

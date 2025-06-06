@@ -2,7 +2,7 @@ import routes from "./routes";
 import { Hono } from "hono";
 import { logger } from "hono/logger";
 import { trimTrailingSlash } from "hono/trailing-slash";
-import { respond } from "@server/lib/utils/respond";
+import { respond } from "@api/lib/utils/respond";
 import { rateLimiter } from "hono-rate-limiter";
 
 const hono = new Hono()

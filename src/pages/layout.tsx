@@ -1,6 +1,6 @@
-import Navbar from "@/lib/components/custom/Navbar";
-import Sidebar from "@/lib/components/custom/Sidebar";
-import ThemeSwitch from "@/lib/components/custom/ThemeSwitch";
+import Navbar from "@src/lib/components/custom/Navbar";
+import Sidebar from "@src/lib/components/custom/Sidebar";
+import ThemeSwitch from "@src/lib/components/custom/ThemeSwitch";
 
 export default function Layout({
   children,

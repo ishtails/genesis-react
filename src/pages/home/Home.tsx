@@ -1,27 +1,34 @@
-import { Button } from "@/lib/components/ui/button";
-import { useStorePersist } from "@/lib/context/zustand";
+import { Button } from "@src/lib/components/ui/button";
+import { useStorePersist } from "@src/lib/context/zustand";
 import { motion } from "motion/react"
-import client from "@/lib/utils/api-client";
+import client from "@src/lib/utils/api-client";
+import { toast } from "sonner";
+import { useMutation } from "@tanstack/react-query";
+import { cn } from "@src/lib/utils/style";
 
 export default function HomePage() {
     const { bears, setBears } = useStorePersist();
-    
-    async function handleClick() {
-        try {
-            const res = await client.example[":id"].$post({
+    const { mutate, status, error } = useMutation({
+        mutationFn: () => {
+            return client.example[":id"].$post({
                 json: {
-                    name: "kartik",
+                    name: "styles",
                 },
                 param: {
-                    id: "123",
+                    id: "1",
                 }
             })
+        },
+        onSuccess: async (res) => {
             const parsed = await res.json();
             console.log(parsed);
-        } catch (error) {
-            console.error(error);
+            toast.success("Successfully fetched data");
+        },
+        onError: (err) => {
+            console.error(err);
+            toast.error("Failed to fetch data");
         }
-    }
+    });
 
     return (
         <div
@@ -35,8 +42,12 @@ export default function HomePage() {
                 transition={{
                     scale: { type: "spring", visualDuration: 0.2, bounce: 0.5 },
                 }}
-                className="rounded-full @lg/main:size-100 size-50 bg-rose-500"
-                onClick={() => {setBears(bears + 1); handleClick();}}
+                className={cn(
+                    "rounded-full @lg/main:size-100 size-50 bg-amber-500",
+                    status === "success" && "bg-green-500", 
+                    error && "bg-red-500",
+                )}
+                onClick={() => { setBears(bears + 1); mutate(); }}
             />
 
             <motion.div
@@ -46,8 +57,11 @@ export default function HomePage() {
                 animate={{
                     opacity: 1
                 }}
-                className="mt-10 font-mono text-4xl font-bold tracking-widest text-rose-500"
-
+                className={cn(
+                    "mt-10 font-mono text-4xl font-bold tracking-widest text-amber-500",
+                    status === "success" && "text-green-500",
+                    error && "text-red-500"
+                )}
             >
                 {bears}
             </motion.div>

@@ -12,7 +12,7 @@ export default function Navbar() {
       {/* top right */}
       <div>
         <Button variant="ghost" size="icon">
-          <Icon name="User" className="size-6" />
+          <Icon name="BotMessageSquare" className="size-6" />
         </Button>
       </div>
     </nav>

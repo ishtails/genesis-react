@@ -4,7 +4,7 @@ import { ThemeProvider } from "./lib/context/theme-provider";
 import { ErrorBoundary } from "./lib/components/errors/ErrorBoundary";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import router from "./pages/router";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 import "../styles/globals.css";
 import { RouterProvider } from "@tanstack/react-router";
 
@@ -25,6 +25,7 @@ const app = (
       <QueryClientProvider client={queryClient}>
         <ThemeProvider defaultTheme="dark" storageKey="theme">
           <RouterProvider router={router} />
+          <Toaster position="bottom-right" theme="dark" />
         </ThemeProvider>
       </QueryClientProvider>
     </ErrorBoundary>
