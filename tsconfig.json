@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@server/*": ["api/*"],
+      "@api/*": ["api/*"],
     }
   },
   "include": ["**/*.ts", "**/*.tsx"]

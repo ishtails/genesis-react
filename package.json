@@ -1,5 +1,5 @@
 {
-  "name": "bun-template",
+  "name": "@genesis/react",
   "version": "0.1.0",
   "private": true,
   "type": "module",
