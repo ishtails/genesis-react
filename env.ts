@@ -1,4 +1,4 @@
-const envKeys = ["BUN_PUBLIC_SERVER_URL"] as const;
+const envKeys = ["BUN_PUBLIC_SERVER_URL", "BUN_VERSION"] as const;
 
 type ENV = Record<(typeof envKeys)[number], string>;
 

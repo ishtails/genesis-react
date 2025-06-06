@@ -5,9 +5,21 @@ A full-stack TypeScript template combining Bun runtime, Hono API framework, and 
 ## Quick Start
 
 ```bash
+# Clone the template locally
+bun create ishtails/genesis-react
+```
+
+```bash
+# Change .env.template to .env
+mv .env.template .env
+```
+
+```bash
 # Start development server
 bun install && bun dev
+```
 
+```bash
 # Build for production
 bun install && bun build && bun start
 ```
