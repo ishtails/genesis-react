@@ -13,15 +13,15 @@ bun create ishtails/genesis-react
 ```bash
 mv .env.template .env
 ```
-
+************
 ### Start development server
 ```bash
-bun install && bun dev
+bun install && bun run dev
 ```
 
 ### Build for production
 ```bash
-bun install && bun build && bun start
+bun install && bun run build && bun run start
 ```
 
 ## Structure
@@ -42,3 +42,5 @@ bun install && bun build && bun start
 - **Styling**: TailwindCSS v4 with shadcn/ui components
 - **Tooling**: Zod for validation, shadcn/ui for components, motion for animations, TanStack Query for server state, Zustand for client state
 - **Security**: Environment configuration, rate limiting, logging, error handling, and more
+
+_Note: You might have noticed the `dist` folder in the repo, which is the output of the build process. This is intentional, and the server won't run (even with `bun dev`) without it. (This is a known issue and will be fixed in the future)_
