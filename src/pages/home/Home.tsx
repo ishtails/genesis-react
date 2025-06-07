@@ -1,5 +1,5 @@
 import { Button } from "@/src/lib/components/ui/button";
-import { useStorePersist } from "@/src/lib/hooks/zustand";
+import { useStorePersist } from "@/src/lib/hooks/use-store";
 import { motion } from "motion/react"
 import client from "@/src/lib/utils/api-client";
 import { toast } from "sonner";

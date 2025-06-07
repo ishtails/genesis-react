@@ -1,4 +1,3 @@
-// Helper function to safely execute functions that might throw errors
 export const safeExecute = <T>(fn: () => T, fallback: T): T => {
   try {
     return fn();
@@ -8,7 +7,6 @@ export const safeExecute = <T>(fn: () => T, fallback: T): T => {
   }
 };
 
-// Helper for safely mapping arrays where item processing might fail
 export const safeMap = <T, R>(
   items: T[] | undefined | null,
   mapFn: (item: T, index: number) => R,
@@ -22,7 +20,6 @@ export const safeMap = <T, R>(
         return mapFn(item, index);
       } catch (error) {
         console.error(`Error mapping item at index ${index}:`, error);
-        // Return undefined or some fallback for this specific item
         return undefined as unknown as R;
       }
     })

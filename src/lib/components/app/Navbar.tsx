@@ -1,4 +1,4 @@
-import Icon from "./Icon";
+import Icon from "../custom/Icon";
 import { Button } from "../ui/button";
 
 export default function Navbar() {
