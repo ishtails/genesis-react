@@ -24,6 +24,12 @@ bun install && bun run dev
 bun install && bun run build && bun run start
 ```
 
+### Add shadcn/ui components
+
+```bash
+npx shadcn@latest add <component>
+```
+
 ## Structure
 
 ```
