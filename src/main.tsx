@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import { ThemeProvider } from "./lib/context/theme-provider";
 import { ErrorBoundary } from "./lib/components/errors/ErrorBoundary";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import router from "./pages/router";
+import router from "./pages/app";
 import { toast, Toaster } from "sonner";
 import "../styles/globals.css";
 import { RouterProvider } from "@tanstack/react-router";

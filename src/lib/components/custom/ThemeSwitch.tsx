@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { useTheme } from "@src/lib/context/theme-provider";
+import { useTheme } from "@/src/lib/context/theme-provider";
 import { motion } from "motion/react";
 import Icon from "../custom/Icon";
 

@@ -1,1 +1,1 @@
-export { default, type ExampleType } from "./example-route";
+export { default, type ExampleType } from "./example.route";

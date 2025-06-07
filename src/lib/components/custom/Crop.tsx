@@ -6,10 +6,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@src/lib/components/ui/dialog";
-import { Button } from "@src/lib/components/ui/button";
-import Icon from "@src/lib/components/custom/Icon";
-import { ToggleGroup, ToggleGroupItem } from "@src/lib/components/ui/toggle-group";
+} from "../ui/dialog";
+import { Button } from "../ui/button";
+import Icon from "./Icon";
+import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 
 type AspectRatio =
   | "square"

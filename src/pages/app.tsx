@@ -5,7 +5,7 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import { withPageErrorBoundary } from "@src/lib/components/errors/PageErrorBoundary";
+import { withPageErrorBoundary } from "@/src/lib/components/errors/PageErrorBoundary";
 import HomePage from "./home";
 
 const rootRoute = createRootRoute({

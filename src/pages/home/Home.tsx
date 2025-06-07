@@ -1,10 +1,10 @@
-import { Button } from "@src/lib/components/ui/button";
-import { useStorePersist } from "@src/lib/context/zustand";
+import { Button } from "@/src/lib/components/ui/button";
+import { useStorePersist } from "@/src/lib/hooks/zustand";
 import { motion } from "motion/react"
-import client from "@src/lib/utils/api-client";
+import client from "@/src/lib/utils/api-client";
 import { toast } from "sonner";
 import { useMutation } from "@tanstack/react-query";
-import { cn } from "@src/lib/utils/style";
+import { cn } from "@/src/lib/utils";
 
 export default function HomePage() {
     const { bears, setBears } = useStorePersist();
