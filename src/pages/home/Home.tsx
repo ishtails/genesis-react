@@ -10,19 +10,20 @@ export default function HomePage() {
     const { bears, setBears } = useStorePersist();
     const { mutate, status, error } = useMutation({
         mutationFn: () => {
-            return client.example[":id"].$post({
-                json: {
-                    name: "styles",
+            return client.example.index.$get({
+                query: {
+                    name: "Genesis",
                 },
-                param: {
-                    id: "1",
-                }
             })
         },
         onSuccess: async (res) => {
             const parsed = await res.json();
-            console.log(parsed);
-            toast.success("Successfully fetched data");
+
+            if(!parsed.success) {
+                throw new Error(parsed.error);
+            }
+
+            toast.success(`Response: ${parsed.data.name}`);
         },
         onError: (err) => {
             console.error(err);

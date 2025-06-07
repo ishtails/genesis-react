@@ -30,39 +30,5 @@ const example = new Hono()
     }
   )
 
-  .post(
-    "/:id",
-    zValidator(
-      "json",
-      z.object({
-        name: z.string(),
-      })
-    ),
-    zValidator(
-      "param",
-      z.object({
-        id: z.string(),
-      })
-    ),
-    async (ctx) => {
-      const { name } = ctx.req.valid("json");
-      const { id } = ctx.req.valid("param");
-
-      if (!name) {
-        return respond.err(ctx, "Name is required", 400);
-      }
-
-      return respond.ok(
-        ctx,
-        {
-          name,
-          id,
-        },
-        "Successfully posted data",
-        200
-      );
-    }
-  );
-
 export default example;
 export type ExampleType = typeof example;
